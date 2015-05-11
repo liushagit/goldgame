@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ibatorConfiguration PUBLIC "-//Apache Software Foundation//DTD Apache iBATIS Ibator Configuration 1.0//EN" "http://ibatis.apache.org/dtd/ibator-config_1_0.dtd" >
+<ibatorConfiguration >
+	<classPathEntry location="D:\maven_repo\mysql\mysql-connector-java\5.0.7\mysql-connector-java-5.0.7.jar"/>
+  <ibatorContext id="context1" >
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/orangegame_res" userId="root" password="root" >
+	</jdbcConnection>
+    <javaModelGenerator targetPackage="com.orange.goldgame.domain" targetProject="goldcommon\src\main\java" />
+    <sqlMapGenerator targetPackage="com.orange.goldgame.system.maps" targetProject="goldSystem1\src\main\resources" />
+    <daoGenerator targetPackage="com.orange.goldgame.system.dao" targetProject="goldSystem1\src\main\java" type="GENERIC-CI" />
+	  
+	<table tableName="app_version">
+		<property name="rootClass" value="com.orange.goldgame.domain.BaseObject" />
+		<generatedKey column="id" sqlStatement="MySql" identity="true" />
+    </table>
+  </ibatorContext>
+</ibatorConfiguration>
+
+	
+
+
+

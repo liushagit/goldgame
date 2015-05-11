@@ -1,0 +1,25 @@
+import com.juice.orange.game.bootstrap.*;
+import com.juice.orange.game.rmi.RemoteConfig;
+import com.orange.goldgame.server.Application;
+
+
+// loading bootstrap configuration
+BootstrapProperties bootstrap = new BootstrapProperties();
+bootstrap.protocol="socket_proxy"; // http or socket or socket_proxy
+bootstrap.port=20001;
+
+
+// loading remote resource
+remotes = new RemoteConfig[]{
+new RemoteConfig("GoldenFlowerSystemServer","localhost",59001),
+};
+
+// build memcached
+CachedProperties cached = new CachedProperties();
+cached.memcachedUrl="localhost:12000";
+//cached.memcachedUrl="192.168.1.61:12000";
+
+Application app = new Application();
+
+
+

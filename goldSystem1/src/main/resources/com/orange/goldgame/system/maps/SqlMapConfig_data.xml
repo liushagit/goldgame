@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMapConfig      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+	
+		<properties url="file:db.properties"></properties>
+	<!--
+		These settings control SqlMap configuration details, primarily to do
+		with transaction management. They are all optional (see the Developer
+		Guide for more).
+	-->
+	<settings cacheModelsEnabled="true" enhancementEnabled="true" lazyLoadingEnabled="true" maxRequests="32" maxSessions="10" maxTransactions="5" useStatementNamespaces="true" />
+	
+	<transactionManager type="JDBC" commitRequired="false">
+		<dataSource type="DBCP">
+			<property name="JDBC.Driver" value="${driver}" />
+			<property name="JDBC.ConnectionURL" value="${res_url}" />
+			<property name="JDBC.Username" value="${res_username}" />
+			<property name="JDBC.Password" value="${res_password}" />
+			<!-- Optional properties below -->
+			<property name="Pool.MaximumIdleConnections" value="3" />
+			<property name="Pool.MaximumWait" value="60000" />
+			<!-- Use of the validation query can be problematic.
+              If you have difficulty, try without it. -->
+			<property name="Pool.ValidationQuery" value="select count(*) from server_config;" />
+			<property name="Pool.LogAbandoned" value="false" />
+			<property name="Pool.RemoveAbandoned" value="false" />
+			<property name="Pool.RemoveAbandonedTimeout" value="50000" />
+		</dataSource>
+	</transactionManager>
+	<!--
+		List the SQL Map XML files. They can be loaded from the classpath, as
+		they are here (com.domain.data...)
+	-->
+	<sqlMap resource="com/orange/goldgame/system/maps/server_config_SqlMap.xml" />
+	<sqlMap resource="com/orange/goldgame/system/maps/app_version_SqlMap.xml" />
+	<sqlMap resource="com/orange/goldgame/system/maps/app_config_SqlMap.xml" />
+	<sqlMap resource="com/orange/goldgame/system/maps/area_config_SqlMap.xml" />
+	<sqlMap resource="com/orange/goldgame/system/maps/props_config_SqlMap.xml" />
+	<sqlMap resource="com/orange/goldgame/system/maps/stake_config_SqlMap.xml" />
+	<sqlMap resource="com/orange/goldgame/system/maps/package_props_SqlMap.xml" />
+	<sqlMap resource="com/orange/goldgame/system/maps/goods_config_SqlMap.xml" />
+	<sqlMap resource="com/orange/goldgame/system/maps/notice_config_SqlMap.xml" />
+	<sqlMap resource="com/orange/goldgame/system/maps/task_config_SqlMap.xml" />
+	<sqlMap resource="com/orange/goldgame/system/maps/robot_pre_SqlMap.xml" />
+	<sqlMap resource="com/orange/goldgame/system/maps/help_qa_SqlMap.xml" />
+    <sqlMap resource="com/orange/goldgame/system/maps/help_type_SqlMap.xml" />
+    <sqlMap resource="com/orange/goldgame/system/maps/pay_info_SqlMap.xml" />
+    <sqlMap resource="com/orange/goldgame/system/maps/appellation_config_SqlMap.xml" />
+    <sqlMap resource="com/orange/goldgame/system/maps/pay_channel_config_SqlMap.xml" />
+    <sqlMap resource="com/orange/goldgame/system/maps/activity_config_SqlMap.xml" />
+    <sqlMap resource="com/orange/goldgame/system/maps/arearobot_pre_SqlMap.xml" />
+    <sqlMap resource="com/orange/goldgame/system/maps/share_reward_SqlMap.xml" />
+</sqlMapConfig>

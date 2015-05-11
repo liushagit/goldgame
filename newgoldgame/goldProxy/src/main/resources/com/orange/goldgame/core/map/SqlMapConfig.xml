@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMapConfig      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+	
+		<properties url="file:db.properties"></properties>
+	<!--
+		These settings control SqlMap configuration details, primarily to do
+		with transaction management. They are all optional (see the Developer
+		Guide for more).
+	-->
+	<settings cacheModelsEnabled="true" enhancementEnabled="true" lazyLoadingEnabled="true" maxRequests="32" maxSessions="10" maxTransactions="5" useStatementNamespaces="true" />
+	
+	<transactionManager type="JDBC" commitRequired="false">
+		<dataSource type="DBCP">
+			<property name="JDBC.Driver" value="${driver}" />
+			<property name="JDBC.ConnectionURL" value="${url}" />
+			<property name="JDBC.Username" value="${username}" />
+			<property name="JDBC.Password" value="${password}" />
+			<!-- Optional properties below -->
+			<property name="Pool.MaximumIdleConnections" value="3" />
+			<property name="Pool.MaximumWait" value="60000" />
+			<!-- Use of the validation query can be problematic.
+              If you have difficulty, try without it. -->
+			<property name="Pool.ValidationQuery" value="select 1;" />
+			<property name="Pool.LogAbandoned" value="false" />
+			<property name="Pool.RemoveAbandoned" value="false" />
+			<property name="Pool.RemoveAbandonedTimeout" value="50000" />
+		</dataSource>
+	</transactionManager>
+	<!--
+		List the SQL Map XML files. They can be loaded from the classpath, as
+		they are here (com.domain.data...)
+	-->
+	<sqlMap resource="com/orange/goldgame/core/map/consum_SqlMap.xml" />
+</sqlMapConfig>

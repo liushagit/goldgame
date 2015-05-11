@@ -1,0 +1,28 @@
+<root>
+	<!-- 初级场 begin -->
+	<primary id="primary1" host="192.168.2.115" isTrace="true" maxOnline="10000" defualt="true" port="20001"/>
+<!-- 	<primary id="primary2" host="192.168.1.44" isTrace="true" port="10002"/> -->
+	<!-- 初级场  end -->
+	
+	<!-- 中级场 begin -->
+	<middle id="middle1" host="192.168.2.115" port="30001"/>
+<!-- 	<middle id="middle2" host="localhost" port="11002"/> -->
+	<!-- 中级场 end -->
+	
+	<!-- 高级场 begin -->
+	<high id="high1" host="192.168.2.115" port="40001" defualt="true"/>
+<!-- 	<high id="high2" host="localhost" port="13002"/> -->
+	<!-- 高级场 end -->
+	
+	<!-- 登录 begin -->
+<!-- 	<login id="login1" host="localhost" port="10001" defualt="true"/> -->
+<!-- 	<login id="login2" host="localhost" port="14002"/> -->
+	<!-- 登录 end -->
+	<!-- 比赛场 -->
+	<match id="match1" host="192.168.2.115" port="50001" defualt="true"/>
+	
+	<!-- 其他begin -->
+	<other id="other1" host="192.168.2.115" port="60001" maxOnline="10000" defualt="true"/>
+<!-- 	<other id="other2" host="192.168.1.44" port="15002" maxOnline="100"/> -->
+	<!-- 其他 end -->
+</root>

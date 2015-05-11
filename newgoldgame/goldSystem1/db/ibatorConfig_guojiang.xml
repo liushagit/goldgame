@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE abatorConfiguration PUBLIC "-//Apache Software Foundation//DTD Abator for iBATIS Configuration 1.0//EN"
+  "http://ibatis.apache.org/dtd/abator-config_1_0.dtd">
+
+<abatorConfiguration>
+  <abatorContext generatorSet="Java5">    <!-- TODO: Add Database Connection Information -->
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        connectionURL="jdbc:mysql://localhost:3306/orangegame_res"
+        userId="root"
+        password="root">
+      <!-- 注意：以下的classPathEntry一定要设置，否则会出现Exception JDBC Driver的错误 -->
+      <classPathEntry location="E:\maven_repo\mysql\mysql-connector-java\5.0.7\mysql-connector-java-5.0.7.jar" />
+    </jdbcConnection>
+     <javaModelGenerator targetPackage="com.orange.goldgame.domain" targetProject="goldcommon\src\main\java" />
+    <sqlMapGenerator targetPackage="com.orange.goldgame.system.maps" targetProject="goldSystem1\src\main\resources" />
+    <daoGenerator targetPackage="com.orange.goldgame.system.dao" targetProject="goldSystem1\src\main\java" type="GENERIC-CI" />
+	  
+    <!--  -->
+    <table tableName="package_props">
+		<property name="rootClass" value="com.orange.goldgame.domain.BaseObject" />
+		<generatedKey column="id" sqlStatement="MySql" identity="true" />
+    </table>
+
+  </abatorContext>
+</abatorConfiguration>
+
+

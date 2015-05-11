@@ -1,0 +1,21 @@
+import com.juice.orange.game.bootstrap.*;
+import com.juice.orange.game.rmi.RemoteConfig;
+import com.orange.goldgame.login.Application;
+
+
+// loading bootstrap configuration
+BootstrapProperties bootstrap = new BootstrapProperties();
+bootstrap.protocol="socket"; // http or socket
+bootstrap.port="5000";
+
+// loading remote resource
+remotes = new RemoteConfig[]{
+new RemoteConfig("GoldenFlowerSystemServer","localhost",13001),
+};
+
+
+
+app = new Application();
+
+
+

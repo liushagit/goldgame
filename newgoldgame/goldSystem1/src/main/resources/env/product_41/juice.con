@@ -1,0 +1,24 @@
+import com.juice.orange.game.bootstrap.*;
+import com.juice.orange.game.rmi.RemoteConfig;
+import com.orange.superstar.system.Application;
+
+
+
+// loading database resource
+DataBaseProperties database = new DataBaseProperties();
+database.url="jdbc:mysql://127.0.0.1:3306/orangegame?useUnicode=true&characterEncoding=UTF-8";
+database.userName="orangegame";
+database.password="!qaz@wsx";
+
+
+
+// loading bootstrap configuration
+BootstrapProperties bootstrap = new BootstrapProperties();
+bootstrap.protocol="remote"; // http or socket remote
+bootstrap.port=13002;
+
+
+
+Application app = new Application();
+
+
